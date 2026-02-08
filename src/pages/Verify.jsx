@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import {useSearchParams} from 'react-router-dom'
 import { useEffect } from 'react'
-import { backendUrl } from '../../../admin/src/App'
+// import { backendUrl } from '../../../admin/src/App'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 
@@ -14,6 +14,8 @@ const Verify = () => {
 
     const success = searchParams.get('success')
     const orderId = searchParams.get('orderId')
+
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
     const verifyPayment = async () => {
         try {
